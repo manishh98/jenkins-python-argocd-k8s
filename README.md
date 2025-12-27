@@ -1,14 +1,53 @@
-# django-todo
-A simple todo app built with django
+# Django Todo App – Jenkins CI/CD with ArgoCD & Kubernetes
 
-![todo App](https://raw.githubusercontent.com/shreys7/django-todo/develop/staticfiles/todoApp.png)
+This project demonstrates an end-to-end CI/CD pipeline for a Django-based Python application using Jenkins, Docker, Kubernetes, and ArgoCD, following GitOps practices.
 
-## CICD Architecture [GitHub -> Jenkins -> k8s Manifests -> Argo CD -> k8s cluster]
+---
 
-![Screenshot 2023-02-01 at 2 48 06 PM](https://user-images.githubusercontent.com/43399466/216001659-74024e94-2c3c-4f1a-8e2e-3ef69b3a88ad.png)
+## 🛠 Tech Stack
+- Python (Django)
+- Jenkins (Declarative Pipeline)
+- Docker & Docker Compose
+- Kubernetes
+- ArgoCD
+- GitHub
+
+---
+
+## 🔄 CI/CD Architecture
+
+GitHub → Jenkins → Docker Image Build → Kubernetes Manifests → ArgoCD → Kubernetes Cluster
+
+This pipeline ensures automated build, containerization, and deployment of the application.
+
+---
+
+## ⚙️ CI/CD Workflow
+1. Code is pushed to GitHub
+2. Jenkins pipeline is triggered automatically
+3. Jenkins builds Docker image for the Django application
+4. Kubernetes manifests are managed via GitHub
+5. ArgoCD continuously syncs manifests to the Kubernetes cluster
+6. Application is deployed and managed using GitOps principles
+
+---
+
+## 📂 Project Structure
+
+├── Dockerfile
+├── Jenkinsfile
+├── docker-compose.yml
+├── deploy/
+│ ├── deploy.yaml
+│ ├── service.yaml
+│ └── pod.yaml
+├── manage.py
+└── todoApp/
 
 
+---
 
-You can find the complete details of the setup and configuration in the below video
+## ▶️ Run Application Locally
+```bash
+docker compose up -d
 
-https://www.youtube.com/watch?v=ogrx8G8pClQ
